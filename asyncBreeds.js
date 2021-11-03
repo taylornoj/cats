@@ -3,8 +3,10 @@ const fs = require('fs');
 
 const breedDetailsFromFile = function(breed) {
   console.log('breedDetailsFromFile: Calling readFile...');
+  console.log('where will this execute');
   fs.readFile(`./data/${breed}.txt`, 'utf8', (error, data) => {
     console.log("In readFile's Callback: it has the data.");
+    console.log('secondary to the the callback console');
     // ISSUE: Returning from *inner* callback function, not breedDetailsFromFile.
     if (!error) return data;
   });
